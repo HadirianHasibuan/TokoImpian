@@ -1,6 +1,7 @@
 // src/router/index.js
 
 import { createRouter, createWebHistory } from 'vue-router';
+import { useUserStore } from '../store/userStore';
 
 // Views
 import Home from '../views/Home.vue';
@@ -10,7 +11,7 @@ import CheckoutPage from '../views/CheckoutPage.vue';
 import LoginPage from '../views/LoginPage.vue';
 import DashboardAdmin from '../views/DashboardAdmin.vue';
 
-// Components (non-lazy, karena dipakai langsung di route detail)
+// Components
 import ProductDetail from '../components/ProductDetail.vue';
 
 const routes = [
@@ -27,6 +28,7 @@ const routes = [
     path: '/admin',
     name: 'DashboardAdmin',
     component: DashboardAdmin,
+    meta: { requiresAuth: true },
     children: [
       {
         path: 'kelola-produk',
@@ -40,7 +42,7 @@ const routes = [
     ]
   },
 
-  // 404 Catch-all (opsional)
+  // 404 Catch-all
   {
     path: '/:pathMatch(.*)*',
     redirect: '/'
@@ -50,6 +52,17 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+});
+
+// ✅ Navigation Guard untuk admin route
+router.beforeEach((to, from, next) => {
+  const userStore = useUserStore();
+
+  if (to.meta.requiresAuth && !userStore.currentUser) {
+    next({ name: 'Login' });
+  } else {
+    next();
+  }
 });
 
 export default router;
