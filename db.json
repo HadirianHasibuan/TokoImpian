@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "name": "Nike Mercurial",
+      "price": 2500000,
+      "image": "https://www.soccercleats101.com/wp-content/uploads/2022/08/Nike-Air-Zoom-Mercurial-Superfly.jpeg",
+      "description": "nike mercurialasasdasdasdasdadadasdas",
+      "sizeRange": [
+        39,
+        40,
+        41,
+        42
+      ],
+      "id": "1"
+    },
+    {
+      "name": "Adidas Predator",
+      "price": 2300000,
+      "image": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/3bd1b1aa04c74b7a93c9224faaffff33_9366/IE1809_HM1.jpg",
+      "description": "adidas predator",
+      "sizeRange": [
+        39,
+        40,
+        41,
+        42
+      ],
+      "id": "2"
+    },
+    {
+      "id": "99d2",
+      "name": "mills pink",
+      "price": 370000,
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-7rask-m56xv4s1ivx22d",
+      "description": "Soldout bos",
+      "sizeRange": [
+        42
+      ]
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "id": "1240",
+      "productId": null,
+      "name": "nike jordan",
+      "price": 1000000,
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/24750e81-85ed-4b0e-8cd8-becf0cd97b2f/air-jordan-1-mid-shoes-7cdjgS.png",
+      "size": "32"
+    },
+    {
+      "id": "16ba",
+      "productId": "2",
+      "name": "Adidas Predator",
+      "price": 2300000,
+      "image": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/3bd1b1aa04c74b7a93c9224faaffff33_9366/IE1809_HM1.jpg",
+      "size": "40"
+    },
+    {
+      "id": "1279",
+      "productId": "1",
+      "name": "Nike Mercurial",
+      "price": 2500000,
+      "image": "https://www.soccercleats101.com/wp-content/uploads/2022/08/Nike-Air-Zoom-Mercurial-Superfly.jpeg",
+      "size": "39"
+    }
+  ]
+}
