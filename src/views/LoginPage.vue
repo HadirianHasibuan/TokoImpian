@@ -1,29 +1,26 @@
 <template>
   <div>
-    <h1>Login</h1>
-    <form @submit.prevent="login">
-      <input v-model="username" placeholder="Username" />
-      <input v-model="password" type="password" placeholder="Password" />
-      <button type="submit">Login</button>
-    </form>
-    <p v-if="error">{{ error }}</p>
+    <h2>Login</h2>
+    <input v-model="username" placeholder="Username" />
+    <input v-model="password" type="password" placeholder="Password" />
+    <button @click="login">Login</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import { useUserStore } from '../store/userStore';
 
+const userStore = useUserStore();
 const username = ref('');
 const password = ref('');
-const error = ref('');
 
-function login() {
-  if (username.value === 'admin' && password.value === 'admin') {
-    // simulasi login
-    localStorage.setItem('user', 'admin');
-    window.location.href = '/admin';
-  } else {
-    error.value = 'Login gagal. Coba admin/admin';
+async function login() {
+  try {
+    await userStore.login(username.value, password.value);
+    alert('Login berhasil');
+  } catch (e) {
+    alert(e.message);
   }
 }
 </script>
